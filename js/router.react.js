@@ -1,42 +1,28 @@
 // React
-var React = require("react");
-var Router = require('react-router');
+import React from 'react';
+import ReactDOM from 'react-dom'
 
-var App = require("./components/app.react.js");
-var Hello = require("./components/hello.react.js");
-var Goodbye = require("./components/goodbye.react.js");
-var Edit = require("./components/edit.react.js");
-var NotFound = require("./components/notfound.react.js");
+import { Router, Route } from 'react-router'
+
+import App from './components/app.react.js'
+import Hello from './components/hello.react.js'
+import HelloWithParam from './components/hello-with-param.react.js'
+import Goodbye from './components/goodbye.react.js'
+import NotFound from './components/notfound.react.js'
+
+let f = (x) => x*x //this is just here to show es6 syntax is working
+console.log(f(5))
 
 
-// Set up Router object
-var Route = Router.Route;
-var DefaultRoute = Router.DefaultRoute;
-var NotFoundRoute = Router.NotFoundRoute;
-
-let f = (x) => x*x
-
-// Declare routes
-let routes = <Route handler={App} path="/">
-    <DefaultRoute name="app" handler={Hello} />
-    <Route name="hello" handler={Hello} />
-    <Route name="goodbye" handler={Goodbye} />
-    <Route name="edit" path="/edit/:name" handler={Edit} />
-    <NotFoundRoute handler={NotFound} />
-  </Route>
-
-/*
 const routes = (
   <Route component={App}>
-    <Route path="/hello" handler={Hello} />
-    <Route path="/goodbye" component={Goodbye} />
-    <Route path="/" component={Hello} />
+    <Route name="hello" path="hello" component={Hello} >
+      <Route name="hello-with-param" path="hello/:name" component={HelloWithParam} />
+    </Route>
+    <Route name="goodbye" path="goodbye" component={Goodbye} />
+    <Route name="default" path="/" component={Hello} />
+    <Route path="*" component={NotFound}/>
   </Route>
 )
-*/
 
-Router.run(routes, function (Handler, state) {
-  //var params = state.params;
-  //React.render(<Handler params={params} />, document.getElementById('app'));
-  React.render(<Handler />, document.getElementById('app'));
-});
+ReactDOM.render(<Router>{routes}</Router> , document.getElementById('app'));
