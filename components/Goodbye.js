@@ -1,13 +1,11 @@
-var React = require('react');
+import React from 'react';
 
 module.exports = React.createClass({
   render: function() {
     return (
       <div>
-        <h1>Hello, {this.props.params.name || "Andrew!"}!</h1>
+        <h1>Goodbye, cruel world!</h1>
       </div>
     )
   }
-
-
 });

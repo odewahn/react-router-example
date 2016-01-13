@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build & npm run serve",
-    "build": "watchify -o public/bundle.js -v -d js/router.react.js",
+    "build": "watchify -o built/bundle.js -v -d index.js",
     "serve": "python -m SimpleHTTPServer"
   },
   "author": "Andrew Odewahn",
