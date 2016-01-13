@@ -1,8 +1,3 @@
-This repo shows a simple example of how to use [react-router](https://github.com/rackt/react-router), version `0.13`.  I should probably figure out how to update it to `1.0`, but damn, too many things.
+A simple example of how to use [react-router](https://github.com/rackt/react-router).  
 
-To use it:
-
-```
-npm install
-npm start
-```
+It also has a very simple setup for doing react and ES6, without all my cargo-culting from various "starter kits" that do who knows the hell what.

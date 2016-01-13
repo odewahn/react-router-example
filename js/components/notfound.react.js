@@ -1,18 +1,8 @@
 // React
-var React = require("react");
+import React from 'react'
 
 // Component
-var NotFound = React.createClass({
-  displayName: "404",
-  propTypes: {},
-  mixins: [],
-
-  getInitialState: function () { return null; },
-
-  componentWillMount: function () {},
-
-  componentWillUnmount: function () {},
-
+module.exports = React.createClass({
   render: function () {
     return (
       <p>
@@ -21,5 +11,3 @@ var NotFound = React.createClass({
     );
   }
 });
-
-module.exports = NotFound;

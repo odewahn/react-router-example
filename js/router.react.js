@@ -6,7 +6,6 @@ import { Router, Route } from 'react-router'
 
 import App from './components/app.react.js'
 import Hello from './components/hello.react.js'
-import HelloWithParam from './components/hello-with-param.react.js'
 import Goodbye from './components/goodbye.react.js'
 import NotFound from './components/notfound.react.js'
 
@@ -15,11 +14,11 @@ console.log(f(5))
 
 
 const routes = (
-  <Route component={App}>
-    <Route name="hello" path="hello" component={Hello} >
-      <Route name="hello-with-param" path="hello/:name" component={HelloWithParam} />
+  <Route path="/" component={App}>
+    <Route path="hello" component={Hello}>
+      <Route path=":name" component={Hello} />      
     </Route>
-    <Route name="goodbye" path="goodbye" component={Goodbye} />
+    <Route name="goodbye" path="/goodbye" component={Goodbye} />
     <Route name="default" path="/" component={Hello} />
     <Route path="*" component={NotFound}/>
   </Route>
